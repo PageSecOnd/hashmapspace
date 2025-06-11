@@ -1,13 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<title>无意识领域(hashset.space)</title>
+    <meta charset="utf-8">
+    <title>无意识领域(hashset.space)</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e3e6f3 100%);
+            font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+            color: #2d2d2d;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 720px;
+            margin: 60px auto;
+            background: rgba(255,255,255,0.85);
+            box-shadow: 0 8px 32px rgba(60,80,150,0.15);
+            border-radius: 24px;
+            padding: 40px 32px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.8em;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.2em;
+            color: #5561aa;
+            text-shadow: 0 2px 12px #b7c0e4;
+        }
+        p {
+            font-size: 1.5em;
+            color: #7c88b5;
+            margin-bottom: 1.8em;
+            margin-top: 0.5em;
+        }
+        .img-box {
+            display: flex;
+            justify-content: center;
+        }
+        .img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(100,130,200,0.12);
+            border: 2px solid #e3e6f3;
+            transition: transform 0.25s;
+        }
+        .img-box img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 40px rgba(80,120,170,0.18);
+        }
+        @media (max-width: 800px) {
+            .container { max-width: 96vw; padding: 18px 3vw; }
+            h1 { font-size: 2em; }
+            p { font-size: 1.1em; }
+        }
+    </style>
 </head>
 <body>
-    <h1>古名地 恋し</h1>
-    <p>Komeiji Koishi</p>
-    <img src="./images/Komeiji Koishi.png" width="1300" height="1929" />
-
+    <div class="container">
+        <h1>古明地 恋</h1>
+        <p>Komeiji Koishi</p>
+        <div class="img-box">
+            <img src="./images/Komeiji Koishi.png" alt="Komeiji Koishi" />
+        </div>
+    </div>
 </body>
 </html>
