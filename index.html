@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         .container {
             max-width: 720px;
@@ -20,23 +21,45 @@
             border-radius: 24px;
             padding: 40px 32px;
             text-align: center;
+            animation: fadeIn 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(40px);}
+            100% { opacity: 1; transform: translateY(0);}
         }
         h1 {
             font-size: 2.8em;
             letter-spacing: 0.1em;
             margin-bottom: 0.2em;
-            color: #5561aa;
+            background: linear-gradient(90deg, #ff6a7f, #8b8aff 60%, #28e6d6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
             text-shadow: 0 2px 12px #b7c0e4;
+            animation: gradient-move 4s ease-in-out infinite alternate;
+        }
+        @keyframes gradient-move {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
         }
         p {
             font-size: 1.5em;
             color: #7c88b5;
             margin-bottom: 1.8em;
             margin-top: 0.5em;
+            letter-spacing: 0.03em;
+            opacity: 0.92;
+            animation: fadeIn 2.5s 0.3s cubic-bezier(0.25, 1, 0.5, 1) backwards;
         }
         .img-box {
             display: flex;
             justify-content: center;
+            margin-bottom: 0.5em;
         }
         .img-box img {
             max-width: 100%;
@@ -44,11 +67,35 @@
             border-radius: 16px;
             box-shadow: 0 4px 32px rgba(100,130,200,0.12);
             border: 2px solid #e3e6f3;
-            transition: transform 0.25s;
+            transition: transform 0.4s cubic-bezier(.4,2,.6,.8), box-shadow 0.3s;
+            animation: imgFloat 4s ease-in-out infinite alternate;
+            background: linear-gradient(135deg, #e7e5fa 0%, #fff 100%);
         }
         .img-box img:hover {
-            transform: scale(1.04);
-            box-shadow: 0 8px 40px rgba(80,120,170,0.18);
+            transform: scale(1.07) rotate(-1.5deg);
+            box-shadow: 0 12px 40px 8px rgba(80,120,170,0.23);
+        }
+        @keyframes imgFloat {
+            0% { transform: translateY(0px);}
+            100% { transform: translateY(-12px);}
+        }
+        .shine {
+            display: inline-block;
+            position: relative;
+        }
+        .shine::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -75%;
+            height: 100%; width: 75%;
+            background: linear-gradient(120deg, rgba(255,255,255,0) 70%, rgba(255,255,255,.3) 100%);
+            transform: skewX(-25deg);
+            animation: shine 2.8s infinite;
+        }
+        @keyframes shine {
+            0% { left: -75%; }
+            70% { left: 110%; }
+            100% { left: 110%; }
         }
         @media (max-width: 800px) {
             .container { max-width: 96vw; padding: 18px 3vw; }
@@ -59,10 +106,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>古明地 恋</h1>
+        <h1 class="shine">古明地 恋</h1>
         <p>Komeiji Koishi</p>
         <div class="img-box">
-            <img src="./images/Komeiji Koishi.png" alt="Komeiji Koishi" />
+            <!--这儿改成JsDelivr的CDN-->
+            <img src="https://cdn.jsdelivr.net/gh/nullxg/hashmapspace/images/Komeiji%20Koishi.png" alt="Komeiji Koishi" />
         </div>
     </div>
 </body>
